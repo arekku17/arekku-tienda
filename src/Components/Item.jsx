@@ -19,7 +19,10 @@ function Item() {
     
     useEffect(() => {
         getItems().then(data => {
+            console.log(data);
             setDataItem(data);
+        }).catch(err => {
+            console.log(err);
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -61,8 +64,10 @@ function Item() {
         const promise = new Promise((resolve) => {
             const url = `/api/producto/${params.id}`;
             resolve(axios.get(url).then(
-                response => response.data
-            ));
+                response => response
+            ).catch(err => {
+                console.log(err);
+            }));
         });
         return promise;
     };
