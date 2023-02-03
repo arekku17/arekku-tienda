@@ -20,7 +20,7 @@ function Item() {
     useEffect(() => {
         getItems().then(data => {
             console.log(data);
-            setDataItem(data);
+            setDataItem(data.data);
         }).catch(err => {
             console.log(err);
         })
