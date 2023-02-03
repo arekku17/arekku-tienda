@@ -99,6 +99,7 @@ function Item() {
 
     return (
         <main>
+            {console.log(dataItem)}
             <div className="datosContainer">
                 <div className="leftContainer">
                     <img src={dataItem.img} alt={dataItem.title} />
