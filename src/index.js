@@ -23,13 +23,13 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
       <Route path='' element={< Inicio />} />
-      <Route path='productos' element={< Productos rutaProducto="Todos los productos" modo="todos" />} />
-      <Route path=':anime' element={< Productos rutaProducto="Filtro por anime" modo="anime" />} />
-      <Route path='buscar/:busqueda' element={< Productos rutaProducto="Busqueda" modo="buscador" />} />
-      <Route path="producto">
+      <Route path='/productos' element={< Productos rutaProducto="Todos los productos" modo="todos" />} />
+      <Route path='/:anime' element={< Productos rutaProducto="Filtro por anime" modo="anime" />} />
+      <Route path='/buscar/:busqueda' element={< Productos rutaProducto="Busqueda" modo="buscador" />} />
+      <Route path="/producto">
         <Route path=':id' element={<Item />} />
       </Route>
-      <Route path='carrito' element={< CarritoPage />} />
+      <Route path='/carrito' element={< CarritoPage />} />
       {/* ... etc. */}
     </Route>
   )
