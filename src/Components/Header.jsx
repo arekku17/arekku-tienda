@@ -24,7 +24,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    axios.get('/api/listanimes')
+    axios.get('https://arekkutienda-api.onrender.com/api/listanimes')
       .then(res => {
         res.data.map(anime => animeList.push({
           slug: `/${anime.anime.replace(" ", "%20")}`,
