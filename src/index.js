@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Item from './components/Item';
-import Productos from './components/Productos';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Item from './Components/Item';
+import Productos from './Components/Productos';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 import './index.css';
 
 import {
@@ -11,9 +11,9 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import CarritoPage from './components/CarritoPage';
+import CarritoPage from './Components/CarritoPage';
 import { ShoppingCartProvider } from './context/ShoppingCartProvider';
-import Inicio from './components/Inicio';
+import Inicio from './Components/Inicio';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 if (process.env.NODE_ENV === 'production') disableReactDevTools();
