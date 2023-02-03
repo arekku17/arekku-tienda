@@ -1,0 +1,69 @@
+footer{
+    background-color: #F67280;
+    color: white;
+    width: calc(100% - 60px);
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.derechos{
+    text-align: center;
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+}
+
+.linksRedes{
+    display: flex;
+    font-weight: normal;
+    flex-wrap: wrap;
+}
+
+.linksRedes div{
+    margin-right: 2rem;
+    display: flex;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.linksRedes div a{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.locate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.direccion{
+    width: 300px;
+}
+
+.linksRedes div a p, .linksRedes div p{
+    margin-left: 1rem;
+}
+
+.linksRedes div a i,  .linksRedes div i{
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 900px) {
+    .linksRedes div{
+        font-size: 1rem;
+    }
+
+    .linksRedes div a i,  .linksRedes div i{
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .direccion{
+        width: 200px;
+    }
+} 

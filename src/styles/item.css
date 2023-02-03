@@ -1,0 +1,252 @@
+.datosContainer{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.leftContainer{
+    width: 50%;
+}
+
+.leftContainer img{
+    width: 100%;
+}
+
+.rightContainer{
+    padding: 0 2vw;
+    font-size: 2vw;
+    color: #6C6C6C;
+}
+
+.animeItem{
+    font-weight: 300;
+    font-size: 2.5vw;
+}
+
+.titleItem{
+    font-weight: bold;
+    font-size: 3.5vw;
+}
+
+.priceItem{
+    color: #F67280;
+    font-weight: bold;
+    font-size: 3.5vw;
+    margin-bottom: 1.3vw;
+}
+
+.tallasContainer{
+    margin-top: 1vw;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.subtotal{
+    margin-top: 1vw;
+}
+
+.tallasButtons{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.tallasButtons button {
+    display: inline-block;
+    border: none;
+    width: 6vw;
+    height: 3vw;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1vw;
+    line-height: 1;
+    cursor: pointer;
+    background-color: #D9D9D9;
+    border-radius: 30px;
+    text-align: center;
+    margin-right: 1vw;
+}
+
+.select{
+    border: 3px solid black !important;
+    background-color: #ffffff !important;
+}
+
+.rightContainer input{
+    border: none;
+    background-color: #D9D9D9;
+    width: 50px;
+    padding: 1vw;
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.subtotal{
+    margin-top: 2vw;
+    font-size: 2.5vw;
+}
+
+.addCart{
+    display: inline-block;
+    border: none;
+    width: 20vw;
+    height: 4vw;
+    margin: 0;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vw;
+    line-height: 1;
+    cursor: pointer;
+    background-color: #C06C84;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 0.5vw;
+}
+
+.addCart:hover{
+    background-color: #8a4a5c;
+}
+
+.descripcionContainer h2{
+    font-size: 2.5rem;
+    padding-bottom: 2vw;
+    border-bottom: 5px solid black;
+    color: #3f3f3f;
+    text-transform: uppercase;
+}
+
+.descripcionContainer .descripcion{
+    font-size: 2rem;
+}
+
+.descripcionContainer ul{
+    font-size: 2rem;
+}
+
+.descripcionContainer{
+    margin-bottom: 5rem;
+}
+
+.cantidad{
+    font-size: 2vw;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .datosContainer{
+        width: 100%;
+    }
+
+    .animeItem{
+        font-size: 4vw;
+    }
+
+    .titleItem, .priceItem{
+        font-size: 5vw;
+    }
+
+    .tallasButtons button{
+        width: 10vw;
+        height: 5vw;
+        font-size: 2vw;
+    }
+
+    .rightContainer input{
+        padding: 7px 2px;
+        font-size: 2vw;
+    }
+
+    .subtotal{
+        margin-top: 3vw;
+        font-size: 3vw;
+    }
+
+    .addCart{
+        width: 30vw;
+        height: 6vw;
+        font-size: 2.5vw;
+        margin-top: 0;
+    }
+
+    .descripcionContainer h2{
+        font-size: 2rem;
+    }
+
+    .descripcionContainer .descripcion{
+        font-size: 1rem;
+    }
+
+    .descripcionContainer ul{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .datosContainer{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .leftContainer{
+        width: 100%;
+    }
+
+    .animeItem{
+        font-size: 6vw;
+    }
+
+    .titleItem, .priceItem{
+        font-size: 8vw;
+    }
+
+    .tallasButtons button{
+        width: 15vw;
+        height: 7vw;
+        font-size: 3vw;
+    }
+
+    .subtotal{
+        margin-top: 3vw;
+        font-size: 6vw;
+    }
+
+    .addCart{
+        width: 30vw;
+        height: 6vw;
+        font-size: 2.5vw;
+        margin-top: 0;
+    }
+
+    .rightContainer{
+        margin-right: 0;
+        font-size: 5vw;
+    }
+
+    .tallasContainer{
+        font-size: 5vw;
+    }
+
+    .cantidad{
+        font-size: 5vw;
+    }
+
+    .rightContainer input{
+        padding: 14px 4px;
+        font-size: 4vw;
+    }
+
+    .addCart{
+        width: 60vw;
+        height: 13vw;
+        font-size: 5vw;
+        margin-top: 2vw;
+    }
+
+}

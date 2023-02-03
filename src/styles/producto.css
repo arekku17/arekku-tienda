@@ -1,0 +1,168 @@
+main {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.formFiltros {
+    display: flex;
+    flex-direction: row;
+}
+
+.opcionArticulos,
+.opcionOrdenar {
+    display: flex;
+    margin-right: 2rem;
+    align-items: center;
+}
+
+.opcionArticulos input,
+.opcionOrdenar select {
+    border: none;
+    background-color: #D9D9D9;
+    margin-left: 1rem;
+    width: 50px;
+    padding: 0.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.opcionOrdenar select {
+    width: 150px;
+}
+
+.opcionesPaginacion {
+    margin-bottom: 2.5rem;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    width: 300px;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.producto img {
+    width: 300px;
+    border-radius: 20px;
+}
+
+.titleAnime,
+.titleProducto,
+.precioProducto {
+    margin-top: 0.7rem;
+}
+
+.titleAnime {
+    color: #6C6C6C;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.titleProducto {
+    text-transform: uppercase;
+    color: #6C6C6C;
+    font-weight: bolder;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.precioProducto {
+    text-transform: uppercase;
+    color: #F67280;
+    font-weight: bolder;
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.stockProducto {
+    color: #6C6C6C;
+    font-size: 1.3rem;
+    font-weight: 300;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.productosContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.producto:hover {
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .titleAnime {
+        font-size: 0.9rem;
+    }
+
+    .titleProducto {
+        font-size: 1rem;
+    }
+
+    .producto {
+        width: 200px;
+    }
+
+    .producto img {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .formFiltros {
+        flex-direction: column;
+    }
+
+    .opcionArticulos,
+    .opcionOrdenar {
+        display: flex;
+        margin-bottom: 1rem;
+        align-items: center;
+    }
+
+    .producto {
+        width: 150px;
+    }
+
+    .producto img {
+        width: 150px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .formFiltros {
+        flex-direction: column;
+    }
+
+    .opcionArticulos,
+    .opcionOrdenar {
+        display: flex;
+        margin-bottom: 1rem;
+        align-items: center;
+    }
+
+    .producto {
+        width: 250px;
+    }
+    
+    .producto img {
+        width: 250px;
+    }    
+}
+

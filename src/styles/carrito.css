@@ -1,0 +1,252 @@
+main{
+    margin-top: 180px;
+}
+
+.carritoContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.title-container{
+    color: #6C6C6C;
+    text-transform: uppercase;
+    font-size: 3vw;
+}
+
+.item-shop{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.item-shop img{
+    height: 16vw;
+    border-radius: 20px;
+    margin-right: 1vw;
+}
+
+.right-body{
+    padding-left: 20vw;
+}
+
+.info-item{
+    color:#6C6C6C;
+}
+
+.info-item .anime{
+    font-weight: 300;
+    font-size: 2vw;
+}
+
+.info-item .title{
+    font-weight: 600;
+    font-size: 2.3vw;
+    text-transform: uppercase;
+}
+
+.talla{
+    font-size: 1.5vw;
+}
+
+.price{
+    font-size: 2.3vw;
+    color: #F67280;
+    font-weight: bold;
+    margin-bottom: 1vw;
+}
+
+.opc-item{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.amount{
+    font-size: 2.3vw;
+    color: #F67280;
+    font-weight: bold;
+    margin-right: 1.5vw;
+}
+
+.amountOpc{
+    display: flex;
+    flex-direction: column;
+}
+
+.opc-item button{
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.plus{
+    background-color: #44a062;
+    padding: 0.5vw;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.minus{
+    background-color: #F67280;
+    padding: 0.5vw;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.delete{
+    background-color: #fff;
+    color: #F67280;
+    font-size: 3vw;
+    margin-left: 1vw;
+}
+
+.item-resumen{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+
+.item-resumen .left{
+    font-weight: bold;
+}
+
+.item-resumen .right{
+    color: #6C5B7B;
+}
+
+.top-resumen{
+    padding-bottom: 1vw;
+    border-bottom: 5px solid rgb(68, 68, 68);
+    margin-bottom: 2vw;
+}
+
+.totalPrice{
+    font-weight: bold;
+    color: #F67280;
+}
+
+.btnEnviar{
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #C06C84;
+    padding: 1.5vw 3vw;
+    border-radius: 20px;
+    font-size: 2vw;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnEnviar:hover{
+    background-color: #944f63;
+}
+
+.btnEnviar i{
+    font-size: 3vw;
+    margin-right: 1vw;
+}
+
+main{
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 900px) {
+    .item-shop img{
+        height: 20vw;
+    }
+
+    .right-body{
+        padding-left: 10vw;
+    }
+
+    .amount{
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title-container{
+        text-align: center;    
+    }
+
+    .item-shop img{
+        height: 20vw;
+    }
+
+    .right-body{
+        padding-left: 10vw;
+    }
+
+    .amount{
+        font-size: 3vw;
+    }
+
+    .carritoContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item-shop img{
+        height: 40%;
+        width: 40%;
+    }
+
+    .item-shop{
+        justify-content: center;
+    }
+
+    .info-item .anime{
+        font-size: 3.5vw;
+    }
+
+    .info-item .title{
+        font-size: 4vw;
+    }
+
+    .info-item .talla{
+        font-size: 3.3vw;
+    }
+
+    .price{
+        font-size: 5vw;
+    }
+
+    .amount{
+        font-size: 5vw;
+        margin-right: 3vw;
+    }
+
+    .plus, .minus{
+        padding: 1.5vw;
+    }
+
+    .delete{
+        font-size: 5vw;
+    }
+
+    .right-body{
+        padding: 0;
+        width: 70%;
+    }
+
+    .item-resumen{
+        font-size: 4vw;
+    }
+
+    .btnEnviar{
+        font-size: 4vw;
+        padding: 3vw 5vw;
+    }
+
+    .btnEnviar i{
+        font-size: 4vw;
+    }
+}
