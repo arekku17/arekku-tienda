@@ -16,32 +16,26 @@ import { ShoppingCartProvider } from './context/ShoppingCartProvider';
 import Inicio from './Components/Inicio';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
-if (process.env.NODE_ENV === 'production') disableReactDevTools();
+// if (process.env.NODE_ENV === 'production') disableReactDevTools();
 
 export default function App() {
   return (
-    <>
+    <React.StrictMode>
       <ShoppingCartProvider>
         <Header />
         <BrowserRouter>
-          <Routes>
-            <Route path="/">
-              <Route index element={< Inicio />} />
+            <Routes>
+              <Route path="/" element={<Inicio/>}/>
               <Route path='/productos' element={< Productos rutaProducto="Todos los productos" modo="todos" />} />
               <Route path='/:anime' element={< Productos rutaProducto="Filtro por anime" modo="anime" />} />
               <Route path='/buscar/:busqueda' element={< Productos rutaProducto="Busqueda" modo="buscador" />} />
-              <Route path="/producto">
-                <Route path=':id' element={<Item />} />
-              </Route>
+              <Route path="/producto/:id" element={<Item />} />
               <Route path='/carrito' element={< CarritoPage />} />
-              {/* ... etc. */}
-            </Route>
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </ShoppingCartProvider>
-    </>
-
+            </Routes>
+        </BrowserRouter>    
+        <Footer />
+        </ShoppingCartProvider>
+    </React.StrictMode>
   );
 }
 
