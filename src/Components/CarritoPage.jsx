@@ -37,7 +37,7 @@ const CarritoPage = () => {
             <div className="carritoContainer">
                 <div className="left-body">
                     <h2 className="title-container">Productos</h2>
-                    {cart.map(item => <ItemCart producto={item} key={item.idItem} />)}
+                    {cart.map(item => <ItemCart producto={item} key={"" + item.idItem + item.talla} />)}
                 </div>
                 <div className="right-body">
                     <h2 className="title-container">Resumen del pedido</h2>

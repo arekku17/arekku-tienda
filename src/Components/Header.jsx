@@ -11,6 +11,7 @@ const Header = () => {
   const [animes, setAnimes] = useState([]);
   const [buscador, setBuscador] = useState("");
 
+  // eslint-disable-next-line no-unused-vars
   const [cart, setCart] = useContext(CartContext);
 
   const quantity = cart.reduce((acc, curr) => {

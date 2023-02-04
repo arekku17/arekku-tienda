@@ -251,6 +251,8 @@ main{
     .btnEnviar{
         font-size: 4vw;
         padding: 3vw 5vw;
+        margin: auto;
+        margin-top: 2rem;
     }
 
     .btnEnviar i{

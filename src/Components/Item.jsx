@@ -15,9 +15,9 @@ function Item() {
     const [subtotal, setSubtotal] = useState(0);
     // eslint-disable-next-line no-unused-vars
     const [cart, setCart] = useContext(CartContext);
-    
 
-    
+
+
     useEffect(() => {
         getItems().then(data => {
             console.log(data);
@@ -30,33 +30,63 @@ function Item() {
 
 
     const addToCart = () => {
-        if(amount > 0){
-            setCart((currItems) => {
-                const isItemFound = currItems.find((item) => item.idItem === dataItem.idItem);
-                if (isItemFound){
-                    return currItems.map((item) => {
-                        if(item.idItem === dataItem.idItem){
-                            return {...item, quantity: item.quantity + amount, talla: tallaString(dataTalla)}
-                        } else{
-                            return item;
+
+        if (amount > 0) {
+            console.log(amount);
+            console.log(dataItem.tallas[dataTalla]);
+            if (amount <= dataItem.tallas[dataTalla]){
+                setCart((currItems) => {
+                    const isItemFound = currItems
+                                        .find((item) => item.idItem === dataItem.idItem && item.talla === tallaString(dataTalla));
+                    console.log(isItemFound);
+                    if (isItemFound) {
+                        if((isItemFound.quantity + amount) <= dataItem.tallas[dataTalla]){
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Agregado producto exitosamente',
+                                footer: '<a href="/carrito">Ir al carrito</a>'
+                            })
+                            return currItems.map((item) => {
+                                if (item.idItem === dataItem.idItem && item.talla === tallaString(dataTalla)) {
+                                    return { ...item, quantity: item.quantity + amount, talla: tallaString(dataTalla) }
+                                } else {
+                                    return item;
+                                }
+                            });
                         }
-                    });
-                } else{
-                    return [...currItems, {...dataItem, quantity: amount, talla: tallaString(dataTalla)}]
-                }
-            })
-            Swal.fire({
-                icon: 'success',
-                title: 'Agregado producto exitosamente',
-                footer: '<a href="/carrito">Ir al carrito</a>'
-              })
+                       else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'No se puede agregar más cantidad del stock...',
+                            text: 'Ya tienes la cantidad igual al stock en tu carrito'
+                        })
+                        return currItems;
+                       }
+                    } else {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Agregado producto exitosamente',
+                            footer: '<a href="/carrito">Ir al carrito</a>'
+                        })
+                        return [...currItems, { ...dataItem, quantity: amount, talla: tallaString(dataTalla) }]
+                    }
+                })
+            }
+            else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'No se puede agregar más cantidad del stock...',
+                    text: 'Cambia la cantidad del producto a uno menor de lo que hay'
+                })
+            }
+            
         }
-        else{
+        else {
             Swal.fire({
                 icon: 'error',
                 title: 'Agrega más de un producto...',
                 text: 'Cambia la cantidad del producto distinto a cero!'
-              })
+            })
         }
     };
 
@@ -88,7 +118,7 @@ function Item() {
     };
 
     const getDescripcion = () => {
-        if (dataItem.tipo === "playera"){
+        if (dataItem.tipo === "playera") {
             return <>
                 <p className="descripcion">Esta playera es la indicada para tu vida y estilo de anime urbano, bastante comodo y con calidad duradera, con el mejor diseño que combien con tu outfit</p>
                 <ul>
@@ -97,7 +127,7 @@ function Item() {
                 </ul>
             </>
         }
-        if (dataItem.tipo === "sudadera"){
+        if (dataItem.tipo === "sudadera") {
             return <>
                 <p className="descripcion">Esta sudadera es la indicada para tu vida y estilo de anime urbano, bastante comodo y con calidad duradera, con el mejor diseño que combien con tu outfit</p>
                 <ul>
@@ -106,7 +136,7 @@ function Item() {
                 </ul>
             </>
         }
-        if (dataItem.tipo === "llavero"){
+        if (dataItem.tipo === "llavero") {
             return <>
                 <p className="descripcion">Este llavero es el adecuado para tu vida y estilo de anime urbano, para colocarlo en tus bultos, mochilas o llaves dando un estilo único</p>
                 <ul>
@@ -145,7 +175,8 @@ function Item() {
                                         <p>Cantidad:</p>
                                         <input type="number" value={amount} min="0" max={dataItem.tallas ? dataItem.tallas[dataTalla] : "0"} onChange={(e) => {
                                             setAmount(parseInt(e.target.value));
-                                            setSubtotal(e.target.value * dataItem.price) }} />
+                                            setSubtotal(e.target.value * dataItem.price)
+                                        }} />
                                         <p className="subtotal">Subtotal: <span className="bold">${subtotal}</span></p>
                                         <button className="addCart" onClick={addToCart}>Agregar al carrito</button>
                                     </>
@@ -167,9 +198,9 @@ function Item() {
             <div className="descripcionContainer">
                 <h2>Descripción</h2>
                 {
-                   getDescripcion()
+                    getDescripcion()
                 }
-                
+
             </div>
         </main>
     )

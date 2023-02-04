@@ -138,13 +138,19 @@ main {
         align-items: center;
     }
 
+    .productosContainer a{
+        width: 45%;
+    }
+
     .producto {
-        width: 135px;
+        width: 100%;
         margin-right: 0;
+        margin-left: 0;
+        padding: 0;
     }
 
     .producto img {
-        width: 135px;
+        width: 100%;
     }
 
 }
@@ -161,14 +167,5 @@ main {
         margin-bottom: 1rem;
         align-items: center;
     }
-
-    .producto {
-        width: 120px;
-        margin-right: 0;
-    }
-    
-    .producto img {
-        width: 120px;
-    }    
 }
 
