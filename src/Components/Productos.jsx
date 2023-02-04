@@ -19,15 +19,15 @@ const Productos = (props) => {
         let url = ""
         //Todos
         if (props.modo === "todos") {
-            url = "https://arekkutienda-api.onrender.com/api/producto";
+            url = "/api/producto";
         }
         //Buscar por anime
         if (props.modo === "anime") {
-           url = `https://arekkutienda-api.onrender.com/api/producto/anime/${params.anime}`;
+           url = `/api/producto/anime/${params.anime}`;
         }
         //Por el buscador
         if (props.modo === "buscador") {
-            url = `https://arekkutienda-api.onrender.com/api/search/${params.busqueda}`;
+            url = `/api/search/${params.busqueda}`;
         }
 
         axios.get(url)

@@ -77,7 +77,7 @@ function Item() {
     }
     const getItems = () => {
         const promise = new Promise((resolve) => {
-            const url = `https://arekkutienda-api.onrender.com/api/producto/${params.id}`;
+            const url = `/api/producto/${params.id}`;
             resolve(axios.get(url).then(
                 response => response
             ).catch(err => {
