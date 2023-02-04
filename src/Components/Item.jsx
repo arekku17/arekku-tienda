@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { CartContext } from '../context/ShoppingCartProvider';
 import '../styles/item.css';
 
@@ -29,20 +30,34 @@ function Item() {
 
 
     const addToCart = () => {
-        setCart((currItems) => {
-            const isItemFound = currItems.find((item) => item.idItem === dataItem.idItem);
-            if (isItemFound){
-                return currItems.map((item) => {
-                    if(item.idItem === dataItem.idItem){
-                        return {...item, quantity: item.quantity + amount, talla: tallaString(dataTalla)}
-                    } else{
-                        return item;
-                    }
-                });
-            } else{
-                return [...currItems, {...dataItem, quantity: amount, talla: tallaString(dataTalla)}]
-            }
-        })
+        if(amount > 0){
+            setCart((currItems) => {
+                const isItemFound = currItems.find((item) => item.idItem === dataItem.idItem);
+                if (isItemFound){
+                    return currItems.map((item) => {
+                        if(item.idItem === dataItem.idItem){
+                            return {...item, quantity: item.quantity + amount, talla: tallaString(dataTalla)}
+                        } else{
+                            return item;
+                        }
+                    });
+                } else{
+                    return [...currItems, {...dataItem, quantity: amount, talla: tallaString(dataTalla)}]
+                }
+            })
+            Swal.fire({
+                icon: 'success',
+                title: 'Agregado producto exitosamente',
+                footer: '<a href="/carrito">Ir al carrito</a>'
+              })
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Agrega más de un producto...',
+                text: 'Cambia la cantidad del producto distinto a cero!'
+              })
+        }
     };
 
     const params = useParams();

@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
+import Swal from 'sweetalert2';
 import { CartContext } from '../context/ShoppingCartProvider';
 import '../styles/carrito.css';
 import ItemCart from './ItemCart';
@@ -11,13 +12,23 @@ const CarritoPage = () => {
     }, 0)
 
     const enviarMensaje = () => {
-        let message = "Buenas, quisiera pedir el siguiente pedido: %0A";
-        cart.map((item, index) =>
-            message += `${index+1} - El producto ${item.idItem} con cantidad de ${item.quantity} en talla ${item.talla} %0A`
-        )
-        message += `El total es: $${subtotal}`;
-        let url = "https://api.whatsapp.com/send?phone=529821845028&text=" + message
-        window.open(url);
+        if (subtotal === 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Agregue productos al carrito...',
+                text: 'Necesita tener productos en el carrito para enviar mensaje',
+            })
+        }
+        else {
+            let message = "Buenas, quisiera pedir el siguiente pedido: %0A";
+            cart.map((item, index) =>
+                message += `${index + 1} - El producto ${item.idItem} con cantidad de ${item.quantity} en talla ${item.talla} %0A`
+            )
+            message += `El total es: $${subtotal}`;
+            let url = "https://api.whatsapp.com/send?phone=529821845028&text=" + message
+            window.open(url);
+        }
+
     }
 
     return (

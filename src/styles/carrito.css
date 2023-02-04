@@ -176,8 +176,15 @@ main{
         text-align: center;    
     }
 
-    .item-shop img{
-        height: 20vw;
+    .item-shop a{
+        width: 40vw;
+        height: 40vw;
+        margin-right: 1rem;
+    }
+
+    .item-shop a img{
+        width: 100%;
+        height: 100%;
     }
 
     .right-body{

@@ -119,6 +119,10 @@ main {
     .producto img {
         width: 200px;
     }
+
+    .stockProducto{
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -135,16 +139,17 @@ main {
     }
 
     .producto {
-        width: 150px;
+        width: 135px;
+        margin-right: 0;
     }
 
     .producto img {
-        width: 150px;
+        width: 135px;
     }
 
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 380px) {
 
     .formFiltros {
         flex-direction: column;
@@ -158,11 +163,12 @@ main {
     }
 
     .producto {
-        width: 250px;
+        width: 120px;
+        margin-right: 0;
     }
     
     .producto img {
-        width: 250px;
+        width: 120px;
     }    
 }
 
