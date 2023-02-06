@@ -33,32 +33,33 @@ const CarritoPage = () => {
 
     return (
         <main>
-            {console.log(cart)}
-            <div className="carritoContainer">
-                <div className="left-body">
-                    <h2 className="title-container">Productos</h2>
-                    {cart.map(item => <ItemCart producto={item} key={"" + item.idItem + item.talla} />)}
-                </div>
-                <div className="right-body">
-                    <h2 className="title-container">Resumen del pedido</h2>
-                    <div className="top-resumen">
-                        <div className="item-resumen">
-                            <p className="left">Envio</p>
-                            <p className="right">$0</p>
-                        </div>
-                        <div className="item-resumen">
-                            <p className="left">Subtotal</p>
-                            <p className="right">${subtotal}</p>
-                        </div>
+            <div className="containerMain">
+                <div className="carritoContainer">
+                    <div className="left-body">
+                        <h2 className="title-container">Productos</h2>
+                        {cart.map(item => <ItemCart producto={item} key={"" + item.idItem + item.talla} />)}
                     </div>
-                    <div className="buttom-resumen">
-                        <div className="item-resumen">
-                            <p className="left">Total</p>
-                            <p className="totalPrice">${subtotal}</p>
+                    <div className="right-body">
+                        <h2 className="title-container">Resumen del pedido</h2>
+                        <div className="top-resumen">
+                            <div className="item-resumen">
+                                <p className="left">Envio</p>
+                                <p className="right">$0</p>
+                            </div>
+                            <div className="item-resumen">
+                                <p className="left">Subtotal</p>
+                                <p className="right">${subtotal}</p>
+                            </div>
                         </div>
-                        <button className="btnEnviar" onClick={enviarMensaje}><i className="fa-solid fa-paper-plane"></i> Enviar pedido</button>
-                    </div>
+                        <div className="buttom-resumen">
+                            <div className="item-resumen">
+                                <p className="left">Total</p>
+                                <p className="totalPrice">${subtotal}</p>
+                            </div>
+                            <button className="btnEnviar" onClick={enviarMensaje}><i className="fa-solid fa-paper-plane"></i> Enviar pedido</button>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </main>

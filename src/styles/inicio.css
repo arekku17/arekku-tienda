@@ -1,0 +1,50 @@
+
+
+.titleMain{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.containerSides{
+    display: flex;
+}
+
+.containerGallery{
+    width: 60%;
+}
+
+.buttonsTipos{
+    display: flex;
+    height: 80%;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tipoButton{
+    width: 25%;
+    cursor: pointer;
+}
+
+.tipoButton img{
+    width: 100%;
+}
+
+.tipoButton p{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #6C5B7B;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 850px) {
+    .containerSides{
+        flex-direction: column;
+    }
+
+    .containerGallery{
+        width: 100%;
+    }
+}

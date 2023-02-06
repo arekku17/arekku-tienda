@@ -1,8 +1,3 @@
-main {
-    margin: 0 auto;
-    width: 95%;
-}
-
 .formFiltros {
     display: flex;
     flex-direction: row;
@@ -34,22 +29,24 @@ main {
     margin-bottom: 2.5rem;
 }
 
+.containerProducto{
+    width: 320px;
+    margin-bottom: 10px;
+}
+
 .producto {
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 0;
-    width: 300px;
-    margin-bottom: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
     padding: 5px;
+    width: 100%;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
 
 .producto img {
-    width: 300px;
+    width: 100%;
     border-radius: 20px;
 }
 
@@ -95,6 +92,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 10px;
 }
 
 .producto:hover {
@@ -112,11 +110,7 @@ main {
         font-size: 1rem;
     }
 
-    .producto {
-        width: 200px;
-    }
-
-    .producto img {
+    .containerProducto{
         width: 200px;
     }
 
@@ -142,17 +136,9 @@ main {
         width: 45%;
     }
 
-    .producto {
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
-        padding: 0;
+    .containerProducto{
+        width: 45%;
     }
-
-    .producto img {
-        width: 100%;
-    }
-
 }
 
 @media screen and (max-width: 380px) {
