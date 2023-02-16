@@ -18,7 +18,7 @@ const Gallery = () => {
       .catch(err => {
         console.log(err);
       })
-  })
+  }, [])
 
   return (
     <Carousel cols={3} rows={1} gap={30} mobileBreakpoint={400}>
