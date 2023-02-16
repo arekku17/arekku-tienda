@@ -84,7 +84,7 @@ const Header = () => {
               <li className={`menu-items ${menu.submenu ? "dropMenu" : ""}`} key={index}>
                 {menu.submenu ? (
                   <>
-                    <Dropdown dropdownTitle={menu.title} items={animes} />
+                    <Dropdown dropdownTitle={menu.title} items={animes.length > 0 ? animes : menu.submenu} />
                   </>
                 ) : (
                   <a href={menu.url}>{menu.title}</a>

@@ -9,15 +9,15 @@ let menuItemslet = [
         url: '/xanime',
         submenu: [
             {
-                slug: "productos/hunterxhunter/",
+                slug: "/Chainsaw%20Man",
                 anchor: "Hunter x Hunter",
             },
             {
-                slug: "productos/csm/",
+                slug: "/Chainsaw%20Man",
                 anchor: "Chainsaw Man",
             },
             {
-                slug: "productos/demonslayer/",
+                slug: "/Demon%20Slayer",
                 anchor: "Demon Slayer",
             },
         ],
